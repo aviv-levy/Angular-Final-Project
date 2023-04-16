@@ -1,0 +1,35 @@
+<div class="container-fluid center-page">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-4">
+            <div class="text-center">
+                <h2>AMADO <i class="fa-solid fa-database"></i> CRM</h2>
+
+                <p>Login with your account</p>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-3">
+                    <label for="email">Email address</label>
+                    <input type="email" formControlName="email" class="form-control" id="email"
+                        placeholder="Enter email">
+                </div>
+
+                <app-err-field [formField]="getFieldControl('email')"></app-err-field>
+
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+                </div>
+
+                <app-err-field [formField]="getFieldControl('password')"></app-err-field>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <div class="d-grid gap-2 mt-4">
+                    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
