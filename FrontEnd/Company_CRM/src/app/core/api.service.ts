@@ -55,4 +55,24 @@ export class ApiService {
     )
   }
 
+  getCustomerDetails(id: string): Observable<Customer> {
+    return this.http.get<Customer>(
+      this.serverUrl + `customers/getCustomerDetails/${id}`
+    )
+  }
+
+  updateCustomer(customer: Customer, customerId: string): Observable<Customer>{
+    return this.http.put<Customer>(
+      this.serverUrl + `customers/editCustomer/${customerId}`,customer,
+      { headers: { 'Content-Type': 'application/json' } }
+    )
+  }
+
+  deleteCustomer(customer: Customer): Observable<Customer> {
+    return this.http.delete<Customer>(
+      this.serverUrl + `customers/deleteCustomer/${customer.email}`,
+      { headers: { 'Content-Type': 'application/json' } }
+    )
+  }
+
 }

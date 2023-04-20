@@ -48,7 +48,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr app-customer *ngFor="let customer of customers; index as i;" [index]="i" [customer]="customer">
+        <tr app-customer (deleteButtonClicked)="deleteCustomer(customer)" *ngFor="let customer of customers; index as i;" [index]="i" [customer]="customer">
             
         </tr>
     </tbody>

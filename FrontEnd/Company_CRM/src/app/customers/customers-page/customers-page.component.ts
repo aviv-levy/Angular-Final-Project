@@ -47,6 +47,16 @@ export class CustomersPageComponent implements OnInit {
     })
   }
 
+  deleteCustomer(customer: Customer) {
+    this.api.deleteCustomer(customer).subscribe({
+      next: (data: Customer) => {
+        this.getCustomers();
+      },
+      error: err => console.log(err)
+    })
+
+  }
+
   onSubmit() {
     if (this.addCustomerForm.invalid)
       return;

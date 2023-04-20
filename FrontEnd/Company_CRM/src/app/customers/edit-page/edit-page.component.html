@@ -1,0 +1,49 @@
+<div class="p-3 mt-5 header-bg">
+    <h2><i class="fa-sharp fa-solid fa-pen"></i>Edit Customer Form</h2>
+</div>
+
+<div class="container mt-4">
+    <form [formGroup]="editCustomerForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="mb-1" for="firstName"><span class="text-danger">*</span> First name</label>
+                    <input type="text" formControlName="firstName" class="form-control" placeholder="First Name">
+                    <app-err-field [formField]="getFieldControl('firstName')"></app-err-field>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="mb-1" for="lastName"><span class="text-danger">*</span> Last name</label>
+                    <input type="text" formControlName="lastName" class="form-control" placeholder="Last Name">
+                    <app-err-field [formField]="getFieldControl('lastName')"></app-err-field>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="mb-1" for="phone"><span class="text-danger">*</span> Phone</label>
+                    <input type="text" formControlName="phone" class="form-control" placeholder="Phone">
+                    <app-err-field [formField]="getFieldControl('phone')"></app-err-field>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="mb-1" for="email"><span class="text-danger">*</span> Email</label>
+                    <input type="email" formControlName="email" class="form-control" placeholder="Email">
+                    <app-err-field [formField]="getFieldControl('email')"></app-err-field>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label class="mb-1" for="address">Address</label>
+                <textarea class="form-control" formControlName="address" placeholder="Address" style="height: 60px"></textarea>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <button (click)="onCancel()" type="button" class="btn btn-secondary mx-2">Cancel</button>
+            <button [disabled]="editCustomerForm.invalid" type="submit" class="btn btn-primary mx-2">Update</button>
+        </div>
+
+    </form>
+</div>

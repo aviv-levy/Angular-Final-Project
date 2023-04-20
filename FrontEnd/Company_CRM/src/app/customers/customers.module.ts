@@ -4,6 +4,9 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrFieldModule } from '../shared/err-field/err-field.module';
 import { CustomerComponent } from './customer/customer.component';
+import { EditPageComponent } from './edit-page/edit-page.component';
+import { ViewPageComponent } from './view-page/view-page.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -11,10 +14,13 @@ import { CustomerComponent } from './customer/customer.component';
   declarations: [
     CustomersPageComponent,
     CustomerComponent,
+    EditPageComponent,
+    ViewPageComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     ErrFieldModule
   ]
 })

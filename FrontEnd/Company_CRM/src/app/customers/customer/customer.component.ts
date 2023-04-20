@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Customer } from 'src/app/app.component';
 
 @Component({
@@ -10,4 +10,13 @@ export class CustomerComponent {
 
   @Input() customer: Customer = {};
   @Input() index: number = 0;
+
+  @Output() deleteButtonClicked = new EventEmitter<Customer>();
+
+
+  deleteCustomer(customer: Customer) {    
+    if (!customer.email)
+      return;
+    this.deleteButtonClicked.emit(customer);
+  }
 }

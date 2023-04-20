@@ -1,5 +1,8 @@
-<td>{{index + 1}} <i class="fa-solid fa-eye m-2"></i> <i class="fa-sharp fa-solid fa-pen m-2"></i> <i
-    class="fa-solid fa-trash-can m-2"></i></td>
+<td class="d-flex align-items-center">{{index + 1}}
+    <a routerLink="/contacts/view-customer/{{customer._id}}" class="nav-link active mx-2" aria-current="page"><i class="fa-solid fa-eye"></i></a>
+    <a routerLink="/contacts/edit-customer/{{customer._id}}" class="nav-link active mx-2" aria-current="page"><i class="fa-sharp fa-solid fa-pen"></i></a>
+    <a (click)="deleteCustomer(customer)" routerLink="/customers" class="nav-link active mx-2" aria-current="page"><i class="fa-solid fa-trash-can"></i></a>
+</td>
 <td>{{customer.firstName}}</td>
 <td>{{customer.lastName}}</td>
 <td>{{customer.phone}}</td>

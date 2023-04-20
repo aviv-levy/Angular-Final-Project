@@ -10,10 +10,12 @@ export interface User {
 }
 
 export interface Customer {
+  _id?: string | null,
   firstName?: string | null,
   lastName?: string | null,
   phone?: string | null,
   email?: string | null,
+  address?: string | null,
 }
 
 @Component({
@@ -39,6 +41,7 @@ export class AppComponent implements AfterViewChecked {
       this.getEmail();
   }
 
+  // Get email user from server by token
   getEmail() {
     this.api.getEmailDetails(this.api.getToken()).subscribe({
       next: (data: any) => {
