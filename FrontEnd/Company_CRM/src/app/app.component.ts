@@ -18,6 +18,14 @@ export interface Customer {
   address?: string | null,
 }
 
+export interface Contact {
+  _id?: string | null,
+  name?: string | null,
+  email?: string | null,
+  birthday?: Date | null,
+  phones?: string | null,
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

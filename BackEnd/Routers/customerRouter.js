@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const jwt = require('jsonwebtoken')
+const verifyToken = require('../verifyToken')
 const customerModel = require('../Models/customerModel')
 
 // http://localhost:3000/customers
-router.get('/', async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
     try {
         const customers = await customerModel.find({});
 
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 })
 
 // http://localhost:3000/customers/getCustomerDetails/:id
-router.get('/getCustomerDetails/:id', async (req, res) => {
+router.get('/getCustomerDetails/:id', verifyToken, async (req, res) => {
     try {
         const CustomerId = req.params.id;
         const customer = await customerModel.findOne({ _id: CustomerId });
@@ -26,7 +26,7 @@ router.get('/getCustomerDetails/:id', async (req, res) => {
 })
 
 // http://localhost:3000/customers/addCustomer
-router.post('/addCustomer', async (req, res) => {
+router.post('/addCustomer', verifyToken, async (req, res) => {
     try {
         const valRes = customerModel.validatePost(req.body);
         if (valRes.error)
@@ -42,7 +42,7 @@ router.post('/addCustomer', async (req, res) => {
 })
 
 // http://localhost:3000/customers/editCustomer/:id
-router.put('/editCustomer/:id', async (req, res) => {
+router.put('/editCustomer/:id', verifyToken, async (req, res) => {
     try {
         const CustomerId = req.params.id;
         const valRes = customerModel.validatePost(req.body);
@@ -58,7 +58,7 @@ router.put('/editCustomer/:id', async (req, res) => {
 
 
 // http://localhost:3000/customers/deleteCustomer/:email
-router.delete('/deleteCustomer/:email', async (req, res) => {
+router.delete('/deleteCustomer/:email', verifyToken, async (req, res) => {
     try {
         const customerEmail = req.params.email;
         await customerModel.deleteOne({ email: customerEmail });

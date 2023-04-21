@@ -9,14 +9,12 @@
                 <div class="form-group">
                     <label class="mb-1" for="firstName"><span class="text-danger">*</span> First name</label>
                     <input type="text" class="form-control" placeholder="First Name" value="{{customer.firstName}}" disabled>
-                    <!-- <app-err-field [formField]="getFieldControl('firstName')"></app-err-field> -->
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <label class="mb-1" for="lastName"><span class="text-danger">*</span> Last name</label>
                     <input type="text" class="form-control" placeholder="Last Name" value="{{customer.lastName}}" disabled>
-                    <!-- <app-err-field [formField]="getFieldControl('lastName')"></app-err-field> -->
                 </div>
             </div>
         </div>
@@ -25,20 +23,17 @@
                 <div class="form-group">
                     <label class="mb-1" for="phone"><span class="text-danger">*</span> Phone</label>
                     <input type="text" class="form-control" placeholder="Phone" value="{{customer.phone}}" disabled>
-                    <!-- <app-err-field [formField]="getFieldControl('phone')"></app-err-field> -->
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <label class="mb-1" for="email"><span class="text-danger">*</span> Email</label>
                     <input type="email" class="form-control" placeholder="Email" value="{{customer.email}}" disabled>
-                    <!-- <app-err-field [formField]="getFieldControl('email')"></app-err-field> -->
                 </div>
             </div>
             <div class="form-group mt-3">
                 <label class="mb-1" for="adress">Address</label>
                 <textarea class="form-control"  placeholder="Address" style="height: 60px" value="{{customer.address}}" disabled></textarea>
-                <!-- <app-err-field [formField]="getFieldControl('email')"></app-err-field> -->
             </div>
         </div>
     </form>

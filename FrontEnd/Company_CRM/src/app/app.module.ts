@@ -6,14 +6,13 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { CustomersModule } from './customers/customers.module';
 import { LoginModule } from './login-page/login.module';
-import { ContactsPageComponent } from './contacts/contacts-page/contacts-page.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ContactsModule } from './contacts/contacts.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +20,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     CustomersModule,
     LoginModule,
     CoreModule,
+    ContactsModule,
     SweetAlert2Module
   ],
   providers: [],

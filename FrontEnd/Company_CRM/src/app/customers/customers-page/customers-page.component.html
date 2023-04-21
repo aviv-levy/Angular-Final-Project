@@ -36,20 +36,22 @@
         </div>
     </form>
 </div>
+<div class="container-fluid">
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th class="align-middle">No.</th>
+                <th class="align-middle">First Name</th>
+                <th class="align-middle">Last Name</th>
+                <th class="align-middle">Phone</th>
+                <th class="align-middle">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr app-customer (deleteButtonClicked)="deleteCustomer(customer)"
+                *ngFor="let customer of customers; index as i;" [index]="i" [customer]="customer">
 
-<table class="table table-hover mt-4">
-    <thead>
-        <tr>
-            <th class="align-middle">No.</th>
-            <th class="align-middle">First Name</th>
-            <th class="align-middle">Last Name</th>
-            <th class="align-middle">Phone</th>
-            <th class="align-middle">Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr app-customer (deleteButtonClicked)="deleteCustomer(customer)" *ngFor="let customer of customers; index as i;" [index]="i" [customer]="customer">
-            
-        </tr>
-    </tbody>
-</table>
+            </tr>
+        </tbody>
+    </table>
+</div>

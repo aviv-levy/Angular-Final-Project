@@ -12,6 +12,7 @@ app.use(cors())
 const loginRouter = require('./Routers/loginRouter.js')
 const getDetailsRouter = require('./Routers/getDetailsRouter.js')
 const customerRouter = require('./Routers/customerRouter.js')
+const contactRouter = require('./Routers/contactRouter.js')
 
 app.use(bodyParser.json())
 
@@ -32,6 +33,7 @@ main();
 
 app.use('/login', loginRouter)
 app.use('/customers', customerRouter)
+app.use('/contacts', contactRouter)
 app.use('/getDetails', getDetailsRouter)
 
 app.listen(port, () => {

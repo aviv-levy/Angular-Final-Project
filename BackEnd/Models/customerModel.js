@@ -21,7 +21,7 @@ const baselineValidation = {
     lastName: JOI.string().required().min(2).pattern(new RegExp("^[a-zA-Z]+$")),
     phone: JOI.string().required().pattern(new RegExp("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$")),
     email: JOI.string().required().email(),
-    address: JOI.string()
+    address: JOI.string().allow('')
 };
 
 // Post Validation

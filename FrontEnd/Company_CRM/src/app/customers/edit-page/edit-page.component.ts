@@ -69,6 +69,9 @@ export class EditPageComponent implements OnInit {
     if (this.editCustomerForm.invalid)
       return;
 
+    if(this.editCustomerForm.value.address === undefined)
+      this.editCustomerForm.value.address = '';
+
     this.api.updateCustomer(this.editCustomerForm.value, this.customerId).subscribe({
       next: (data: Customer) => {
         Swal.fire(

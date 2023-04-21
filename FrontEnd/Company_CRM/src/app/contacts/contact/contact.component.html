@@ -1,0 +1,11 @@
+<td >{{index + 1}}</td>
+<td>{{contact.name}}</td>
+<td>{{contact.email}}</td>
+<td>{{contact.birthday}}</td>
+<td>
+    <ul>
+        <li *ngFor="let phone of contact.phones">
+            {{phone}}
+        </li>
+    </ul>
+</td>

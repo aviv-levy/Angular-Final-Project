@@ -9,17 +9,16 @@ import { ViewPageComponent } from './customers/view-page/view-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent, canActivate: [AuthService] },
+  {  path: '', pathMatch: 'full', redirectTo: '/customers'},
   {
     path: '',
-    // redirectTo: '/home',
-    // pathMatch: 'full',
     canActivateChild: [AuthService],
     children: [
       { path: 'customers', component: CustomersPageComponent },
       { path: 'contacts', component: ContactsPageComponent },
       { path: 'contacts/edit-customer/:id', component: EditPageComponent },
       { path: 'contacts/view-customer/:id', component: ViewPageComponent },
-    ]
+    ],
   }
 ];
 
