@@ -1,0 +1,70 @@
+{
+    "users": [
+        {
+            "email": "aviv@gmail.com",
+            "password": "123456"
+        },
+        {
+            "email": "tester@gmail.com",
+            "password": "123456"
+        }
+    ],
+    "customers": [
+        {
+            "firstName": "Amit",
+            "lastName": "Benayun",
+            "phone": "052-4852236",
+            "email": "Amit@gmail.com"
+        },
+        {
+            "firstName": "Liat",
+            "lastName": "Baruch",
+            "phone": "050-2126485",
+            "email": "Liat@gmail.com"
+        },
+        {
+            "firstName": "Miryam",
+            "lastName": "Adler",
+            "phone": "052-5285569",
+            "email": "Miryam@gmail.com"
+        }
+    ],
+    "contacts": [
+        {
+            "name": "Roy Menahem",
+            "email": "Roy@gmail.com",
+            "birthday": "04/05/1998",
+            "phones": [
+                "052-4869940",
+                "054-1354456"
+            ]
+        },
+        {
+            "name": "Sivan Haymov",
+            "email": "Sivan@gmail.com",
+            "birthday": "12/08/2002",
+            "phones": [
+                "054-9984578"
+            ]
+        },
+        {
+            "name": "Shlomo Cohen",
+            "email": "Shlomo@gmail.com",
+            "birthday": "16/02/1990",
+            "phones": [
+                "052-6348945",
+                "054-4564452",
+                "050-8785536"
+            ]
+        },
+        {
+            "name": "David Razmovski",
+            "email": "David@gmail.com",
+            "birthday": "25/01/1996",
+            "phones": [
+                "052-2324974",
+                "054-3111684"
+            ]
+        }
+    ]
+}
